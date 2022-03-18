@@ -23,9 +23,12 @@ public class InvalidPhoneNumberException extends Exception {
         try {
             if (error.length() >= 10 && error.length() < 50) {
                 setError(error);
+                getError();
+            } else {
+
             }
         } catch (Exception e) {
-            setError("your fullname is wrong. Please, input again.");
+            System.out.println("your fullname is wrong. Please, input again.");
         }
     }
 }

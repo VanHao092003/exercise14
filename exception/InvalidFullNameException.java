@@ -1,34 +1,33 @@
 package exception;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 public class InvalidFullNameException extends Exception {
-    private String errorDay;
+    private String fullname;
 
-    public InvalidFullNameException(String errorDay) {
-        this.errorDay = errorDay;
+    public InvalidFullNameException(String fullname) {
+        this.fullname = fullname;
     }
 
-    public String getErrorDay() {
-        return errorDay;
+    public InvalidFullNameException() {
     }
 
-    public void setErrorDay(String errorDay) {
-        this.errorDay = errorDay;
+    public String getFullname() {
+        return fullname;
     }
 
-    public void check(String errorDay) {
-        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public void checkFullname(String fullname_) {
         try {
-            Date date = format.parse(errorDay);
-            if (date instanceof Date) {
-                setErrorDay(errorDay);
+            if (fullname_.length() >= 10 && fullname_.length() < 50) {
+                setFullname(fullname_);
+                getFullname();
             } else {
-                throw new Exception();
+                throw new InvalidFullNameException();
             }
         } catch (Exception e) {
-            System.err.println("Your birthday is wrong. Please, input again.");
+            System.out.println("your fullname is wrong. Please, input again.");
         }
     }
 
