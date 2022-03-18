@@ -1,6 +1,6 @@
 package exception;
 
-public class OtherException {
+public class OtherException extends Exception {
     private String error = "Input files have unknow errors !!!";
 
     public OtherException() {
@@ -9,5 +9,8 @@ public class OtherException {
 
     public String getError() {
         return error;
+    }
+
+    public void OtherException() {
     }
 }

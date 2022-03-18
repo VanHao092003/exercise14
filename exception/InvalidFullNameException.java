@@ -3,7 +3,7 @@ package exception;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class InvalidFullNameException {
+public class InvalidFullNameException extends Exception {
     private String errorDay;
 
     public InvalidFullNameException(String errorDay) {

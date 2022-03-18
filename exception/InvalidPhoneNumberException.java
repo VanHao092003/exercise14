@@ -1,14 +1,18 @@
 package exception;
 
-public class InvalidPhoneNumberException {
-    protected String error;
+public class InvalidPhoneNumberException extends Exception {
+    private String error;
+
+    public String getError() {
+        return error;
+    }
 
     public InvalidPhoneNumberException(String error) {
         this.error = error;
     }
 
-    public String getError() {
-        return error;
+    public InvalidPhoneNumberException() {
+
     }
 
     public void setError(String error) {
